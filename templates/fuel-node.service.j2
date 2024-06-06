@@ -10,7 +10,7 @@ ExecStart=/root/.fuelup/bin/fuel-core run \
   --relayer {{ eth_rpc_endpoint }} \
   --ip 0.0.0.0 --port 4001 --peering-port 30333 \
   --db-path {{ db_path }} \
-  --snapshot /root/fueltest/ \
+  --snapshot /root/chain-configuration/ignition/ \
   --utxo-validation --poa-instant false --enable-p2p \
   --reserved-nodes /dns4/p2p-testnet.fuel.network/tcp/30333/p2p/16Uiu2HAmDxoChB7AheKNvCVpD4PHJwuDGn8rifMBEHmEynGHvHrf \
   --sync-header-batch-size 100 \
