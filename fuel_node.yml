@@ -17,7 +17,7 @@
     p2p_secret_path: "/root/fuel/p2p_secret"
     home_fuel: "/root/fuel"
     chain_config_path: "/root/fuel/chainConfig.json"
-    db_path: "/root/fuel/.fuel_beta5"
+    db_path: "/root/.fuel-sepolia-testnet"
     fuel_bin_path: "/root/.fuelup/bin"
 
   tasks:
