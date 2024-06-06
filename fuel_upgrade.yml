@@ -36,13 +36,13 @@
         - name: Ensure jq is installed
           apt:
             name: jq
-            state: present    
-  
+            state: present
+
         - name: Remove existing .fuelup directory
           file:
             path: "/root/.fuelup"
             state: absent
- 
+
         - name: Install Fuel toolchain without interactive prompt
           shell: |
              curl https://install.fuel.network | sh -s -- --no-modify-path
@@ -61,18 +61,12 @@
             state: directory
             mode: '0755'
 
-        - name: Generate P2P secret key
-          shell: export PATH=$PATH:{{ fuel_bin_path }} && fuel-core-keygen new --key-type peering > {{ p2p_secret_path }}
-          args:
-            creates: "{{ p2p_secret_path }}"
-            executable: /bin/bash
-
         - name: Read P2P secret key
           shell: cat {{ p2p_secret_path }} | jq -r '.secret'
           register: p2p_secret
           changed_when: false
           when: node_action == "install"
-    
+
         - name: Create DB directory
           file:
             path: "{{ db_path }}"
@@ -98,7 +92,7 @@
             name: fuel-node
             state: stopped
             enabled: no
-           
+
 
         - name: Remove Fuel node service file
           file:
