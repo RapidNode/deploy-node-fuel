@@ -12,6 +12,7 @@ ExecStart=/root/.fuelup/bin/fuel-core run \
   --db-path {{ db_path }} \
   --snapshot /root/chain-configuration/ignition/ \
   --utxo-validation --poa-instant false --enable-p2p \
+  --min-gas-price 1 --max-block-size 18874368  --max-transmit-size 18874368 \
   --reserved-nodes /dns4/p2p-testnet.fuel.network/tcp/30333/p2p/16Uiu2HAmDxoChB7AheKNvCVpD4PHJwuDGn8rifMBEHmEynGHvHrf \
   --sync-header-batch-size 100 \
   --enable-relayer \
@@ -21,6 +22,13 @@ ExecStart=/root/.fuelup/bin/fuel-core run \
   --sync-block-stream-buffer-size 30
 Restart=on-failure
 RestartSec=5s
+StartLimitBurst=3
+StartLimitIntervalSec=10s
+TimeoutStartSec=60s
+TimeoutStopSec=60s
+LimitNOFILE=65535
+WatchdogSec=3600s
+ExecStartPre=/bin/sleep 10
 
 [Install]
 WantedBy=multi-user.target
