@@ -17,7 +17,7 @@
     ansible_python_interpreter: /usr/bin/python3.10  # Explicit Python path
     p2p_secret_path: "/root/fuel/p2p_secret"
     home_fuel: "/root/fuel"
-    db_path: "/root/.fuel-sepolia-testnet"
+    db_path: "/root/.fuel-mainnet"
     fuel_bin_path: "/root/.fuelup/bin"
 
   tasks:
