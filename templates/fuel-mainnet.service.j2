@@ -13,13 +13,15 @@ ExecStart=/root/.fuelup/bin/fuel-core run \
   --snapshot /root/chain-configuration/ignition/ \
   --utxo-validation --poa-instant false --enable-p2p \
   --bootstrap-nodes /dnsaddr/mainnet.fuel.network \
-  --min-gas-price 1 --max-block-size 18874368  --max-transmit-size 18874368 \
   --sync-header-batch-size 100 \
   --enable-relayer \
   --relayer-v2-listening-contracts 0xAEB0c00D0125A8a788956ade4f4F12Ead9f65DDf \
   --relayer-da-deploy-height 20620434 \
   --relayer-log-page-size 100 \
-  --sync-block-stream-buffer-size 30
+  --sync-block-stream-buffer-size 30 \
+  --max-peers-connected=30 \
+  --connection-idle-timeout=60 \
+  --relayer-eth-sync-log-freq-s=30
 Restart=on-failure
 RestartSec=5s
 StartLimitBurst=3
