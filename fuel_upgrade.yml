@@ -76,8 +76,8 @@
 
         - name: Create Fuel node service
           template:
-            src: templates/fuel-node.service.j2
-            dest: /etc/systemd/system/fuel-node.service
+            src: templates/fuel-mainnet.service.j2
+            dest: /etc/systemd/system/fuel-mainnet.service
 
         - name: Reload systemd, enable and start Fuel node service
           systemd:
@@ -97,7 +97,7 @@
 
         - name: Remove Fuel node service file
           file:
-            path: /etc/systemd/system/fuel-node.service
+            path: /etc/systemd/system/fuel-mainnet.service
             state: absent
 
         - name: Remove chain configuration and data directories
