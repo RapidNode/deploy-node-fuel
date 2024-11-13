@@ -53,14 +53,14 @@ Ensure you run the playbook with root privileges.
 After initialization, you can start the Fuel node service with:
 
 ```
-sudo systemctl start fuel-node
+sudo systemctl start fuel-mainnet
 ```
 
 ## Viewing Logs
 To monitor your Fuel node's operation:
 
 ```
-journalctl -u fuel-node -f -o cat
+journalctl -u fuel-mainnet -f -o cat
 ```
 
 ### Stopping Services

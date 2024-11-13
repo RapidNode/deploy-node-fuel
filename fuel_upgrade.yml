@@ -79,7 +79,7 @@
         - name: Reload systemd, enable and start Fuel node service
           systemd:
             daemon_reload: yes
-            name: fuel-node
+            name: fuel-mainnet
             enabled: yes
             state: stopped
       when: node_action == "install"
@@ -87,7 +87,7 @@
     - block:
         - name: Stop and disable Fuel node service
           systemd:
-            name: fuel-node
+            name: fuel-mainnet
             state: stopped
             enabled: no
 
