@@ -67,7 +67,7 @@ journalctl -u fuel-mainnet -f -o cat
 Stop the Fuel node service with:
 
 ```
-sudo systemctl stop fuel-node
+sudo systemctl stop fuel-mainnet
 ```
 
 ### Removing the Node
