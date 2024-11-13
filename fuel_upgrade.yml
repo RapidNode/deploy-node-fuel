@@ -9,9 +9,6 @@
     - name: service_name
       prompt: "Enter the service name for the Fuel node"
       private: no
-    - name: eth_rpc_endpoint
-      prompt: "Enter your Alchemy Ethereum RPC endpoint (Sepolia)"
-      private: no
 
   vars:
     ansible_python_interpreter: /usr/bin/python3.10  # Explicit Python path

@@ -7,7 +7,6 @@ User=root
 ExecStart=/root/.fuelup/bin/fuel-core run \
   --service-name {{ service_name }} \
   --keypair {{ p2p_secret.stdout }} \
-  --relayer {{ eth_rpc_endpoint }} \
   --ip 0.0.0.0 --port 4001 --peering-port 30333 \
   --db-path {{ db_path }} \
   --snapshot /root/chain-configuration/ignition/ \
